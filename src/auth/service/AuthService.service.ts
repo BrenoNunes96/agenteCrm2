@@ -12,7 +12,7 @@ constructor(@Inject(forwardRef(()=>usuarioService)) private readonly usuarioServ
 
 async validarUser(usuario:string,senha:string ):Promise<any>{ // validação login para verificar se existe no banco de dados
  const buscarUsuario = await this.usuarioServices.findbyname(usuario) // acha o nome no banco com o usuario enviado
-if(!buscarUsuario)throw new HttpException("usuario ou senha não corresposndem",HttpStatus.CREATED) // se n achar para aplicaçao
+if(!buscarUsuario)throw new HttpException("usuario ou senha não corresposndem",HttpStatus.NOT_FOUND) // se n achar para aplicaçao
 
 const compararSenha = await this.bcrypt.CompararSenha(senha,buscarUsuario.senha) // tenta achar senha no banco
 if(!compararSenha)throw new HttpException("usuario ou senha não correspondem",HttpStatus.NOT_FOUND)
