@@ -28,7 +28,7 @@ const payload = {sub:buscarUsuario?.usuario}
 return{
 id:buscarUsuario?.id,
 usuario:buscarUsuario?.usuario,
-token:`Bearer ${this.jwt.sign(payload)} `
+token:`Bearer ${this.jwt.sign(payload)}`
 
 
 }
