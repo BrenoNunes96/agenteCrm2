@@ -7,7 +7,7 @@ createTypeOrmOptions():TypeOrmModuleOptions {
     return{
 type:'postgres',
 url:process.env.DATABASE_URL,
-synchronize:false,
+synchronize:true,
 dropSchema:false,
 ssl:{rejectUnauthorized:false},
 logging:false,
