@@ -25,12 +25,7 @@ console.log(x)
 }
 
 
-  @Delete("/deletar/:id")
-  @UseGuards(jwtGuard)
-  @HttpCode(HttpStatus.OK)
-  async deletar(@Params x:number):Promise<DeleteResult>{
-    return await this.agenteService.Delete(x)
-  }
+
 
   @Get("/media")
   @UseGuards(jwtGuard)
