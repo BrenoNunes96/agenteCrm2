@@ -25,10 +25,10 @@ console.log(x)
 }
 
 
-  @Delete("/deletar")
+  @Delete("/deletar/:id")
   @UseGuards(jwtGuard)
   @HttpCode(HttpStatus.OK)
-  async deletar(@Params x:number):Promise<AgenteEntity>{
+  async deletar(@Params x:number):Promise<DeleteResult>{
     return await this.agenteService.Delete(x)
   }
 
