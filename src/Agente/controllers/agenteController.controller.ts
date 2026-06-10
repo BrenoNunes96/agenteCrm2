@@ -25,6 +25,12 @@ console.log(x)
 }
 
 
+@Delete("/:id")
+@UseGuards(jwtGuard)
+@HttpCode(HttpStatus.OK)
+async deletar(@Param('id',ParseIntPipe ) x:number):Promise<DeleteResult>{
+  return await this.agenteService.Delete(x)
+}
 
 
   @Get("/media")
